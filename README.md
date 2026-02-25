@@ -4,6 +4,8 @@ This is a Python/Flask template for building a microservice in Kubernetes and Do
 
 # Repository structure
 
+
+
 The main files in this repository are:
 
 * `Dockerfile` specifies how the application is built and packaged
