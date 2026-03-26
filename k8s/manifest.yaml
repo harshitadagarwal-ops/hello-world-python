@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world-python
+  namespace: tekton-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world-python
+  template:
+    metadata:
+      labels:
+        app: hello-world-python
+    spec:
+      containers:
+        - name: hello-world-python
+          image: harshitaagarwal1503/trekton:latest
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-python
+  namespace: tekton-dev
+spec:
+  selector:
+    app: hello-world-python
+  ports:
+    - port: 80
+      targetPort: 8080
+  type: NodePort
