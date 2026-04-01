@@ -18,5 +18,3 @@ def test_elapsed_format():
     parts = result.split(':')
     assert len(parts) == 3
 
-
-
